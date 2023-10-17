@@ -4,10 +4,11 @@
             const dotenv = require('dotenv')
             dotenv.config()
             const PORT =process.env.PORT
-            
+            const cors = require('cors')
             const AppRoutes = require('./src/routes')
         
             const app = express()
+            app.use(cors())
             app.use(express.json())
             
             app.use('/',AppRoutes)
